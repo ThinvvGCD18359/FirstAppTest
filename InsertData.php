@@ -9,14 +9,14 @@ list-style: none;
 </style>
 </head>
 <body>
-<h1>INSERT DATA TO DATABASE</h1>
-<h2>Enter data into customer table</h2>
+<h1>REGISTER</h1>
+<h2>Register</h2>
 <ul>
     <form name="InsertData" action="InsertData.php" method="POST" >
-<li>Customer ID:</li><li><input type="text" name="customerid" /></li>
-<li>Customer Name:</li><li><input type="text" name="customername" /></li>
-<li>Customer Phone:</li><li><input type="text" name="customerphone" /></li>
-<li>Address:</li><li><input type="text" name="address" /></li>
+<li>Username:</li><li><input type="text" name="customerid" /></li>
+<li>Email:</li><li><input type="text" name="customername" /></li>
+<li>Password:</li><li><input type="text" name="customerphone" /></li>
+<li>Confirm Password:</li><li><input type="text" name="address" /></li>
 <li><input type="submit" /></li>
 </form>
 </ul>
@@ -57,14 +57,14 @@ $sql = "INSERT INTO customer(customerid, customername, customerphone, address)"
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
     if (is_null(customer_id)) {
-   echo "Customer ID must be not null";
+   echo "Username must be not null";
  }
  else
  {
     if($stmt->execute() == TRUE){
-        echo "Record inserted successfully.";
+        echo "Register successfully.";
     } else {
-        echo "Error inserting record: ";
+        echo "Error inserting input: ";
     }
  }
  
